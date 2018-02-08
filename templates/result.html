@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search Result Page</title>
+	</head>
+   <body>
+   	<!-- Search area -->
+	<center>
+		<h1>Vọc Vạch</h1>
+		<img src="http://www.iconarchive.com/download/i60665/double-j-design/origami-colored-pencil/green-search.ico">
+		<form action="/searchword" method="get">
+		  <input type="text" style="margin-top: 10px; height: 27px; width: 200px" name="query" value="{{ query }}">
+		  <br><br>
+		  <input type="submit" style="margin-bottom: 20px;font-size: 19px;background-color: #87c16a;" value="Search">
+		</form> 
+	</center>
+
+
+	<center>
+		<table>
+         {% for link in resultLinks %}
+            <tr style="margin-top: 5px">
+               <td> Result {{ loop.index }} </td>
+               <td> <a href={{ value }}> {{ link[0] }} </a> </td>
+            </tr>
+         {% endfor %}
+      </table>
+	</center>
+      
+    <style type="text/css">
+    	margin-bottom: 20px;
+    	font-size: 19px;
+    	background-color: #87c16a;
+    </style>
+   </body>
+</html>
